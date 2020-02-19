@@ -1,1 +1,84 @@
 /* You can add global styles to this file, and also import other style files */
+// import Roboto font 
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+$main-bg_color: #413f54;
+$main-text_color: #ffffff;
+
+
+body {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+header,
+footer {
+    background: $main-bg_color;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $main-text_color;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+        color: $main-text_color;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 14px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+main {
+    background: #ccdaea;
+}
+
+.search-section {
+    padding: 30px 15px;
+    form {
+        position: relative;
+        // i {
+        //     position: absolute;
+        //     height: 15px;
+        //     width: 15px;
+        // }
+        input {
+            height: 25px;
+            padding: 5px 5px 5px 30px;
+            font-size: 12px;
+            border: 1px solid #cccdce;
+            border-radius: 3px;
+        }
+    }
+}
+
+.courseslist-section {
+    padding: 30px 15px;
+    .action-control {
+        display: flex;
+        align-items: flex-end;
+    }
+}
+
+
+footer {
+    justify-content: flex-end;
+}
+
+.copyright-section {
+    p {
+        font-size: 14px;
+        color: #6e7984;
+    }
+}

@@ -4,16 +4,50 @@
     <img src="https://static.cdn.epam.com/uploads/b805fc06d61dec80ef8eba5aaaa854fd/EPM-TUBE/video-digital-platform-logo-v2.svg" alt="main-logo">
   </div>
   <nav class="main-nav">
-    <ul>
-      <li><a href="">Courses</a></li>
-      <li><a href="">About</a></li>
-    </ul>
+    <a href="">Courses</a>
+    <a href="">About</a>
   </nav>    
 </header>
 
 <!-- Main Content -->
 <main>
+  <section class="search-section">
+    <!-- ????~~~ FontAwesome -->
+    <!-- <i class="fas fa-trash-alt"></i> -->
+    <form>
+      <label for="coursesearch"></label>
+      
+      <input type="text" id="coursesearch" name="coursesearch" placeholder="Text for search">
+    </form>
+  </section>
 
+
+  <section class="courseslist-section">
+    <div class="action-control">
+      <a class="add-item_btn" href="">Add item</a>
+    </div>
+
+    <div class="courses-item">
+      <div class="courses-title">
+        <h3>Lorem ipsum dolor sit amet consectetur</h3>
+        <div class="course-info">
+          <img src="" alt="clock-icon">
+          <span>2h 32min</span>
+          <img src="" alt="calendar-icon">
+          <span>4h 12min</span>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Suscipit, sunt quidem. Harum tenetur atque, veniam hic praesentium 
+          cum ad asperiores veritatis reprehenderit magni omnis repellat odit eius 
+          aspernatur nihil ratione minima placeat nesciunt! Quasi qui laudantium soluta 
+          voluptatibus! Unde porro quos, natus quis vel corrupti magni quod ipsam tempore id?</p>
+      </div>
+    </div>
+
+    <div class="load-control">
+      <a href="" class="load-more_btn">Load more</a>
+    </div>
+  </section>
 </main>
 
 
@@ -24,10 +58,6 @@
     <p>Copyright © Videocorses. All rights reserved</p>
   </div>
 </footer>
-
-
-
-
 
 
 <router-outlet></router-outlet>
