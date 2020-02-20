@@ -9,11 +9,16 @@ $main-text_color: #ffffff;
 $action-btn_color: #1ebbdb;
 
 
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
 body {
     width: 100%;
-    margin: 0;
-    padding: 0;
     font-family: 'Roboto', sans-serif;
+    height: 100vh;
 }
 
 header,
@@ -43,6 +48,8 @@ footer {
 
 main {
     background: #ccdaea;
+    overflow: auto;
+    min-height: 645px;
 }
 
 .search-section {
@@ -60,7 +67,8 @@ main {
             }
         }
         input {
-            height: 25px;
+            width: 300px;
+            height: 30px;
             padding: 5px 5px 5px 30px;
             font-size: 12px;
             border: 1px solid #cccdce;
@@ -70,7 +78,7 @@ main {
 }
 
 .courseslist-section {
-    padding: 30px 15px;
+    padding: 0 15px 30px;
     .action-control {
         display: flex;
         justify-content: flex-end;
@@ -99,19 +107,98 @@ main {
     }
 
     .courses-item {
-        padding: 15px;
+        display: flex;
+        padding: 20px 15px 30px 15px;
+        margin: 15px 0 0;
         -webkit-box-shadow: 0px 2px 10px 0px rgba(173,166,173,1);
         -moz-box-shadow: 0px 2px 10px 0px rgba(173,166,173,1);
         box-shadow: 0px 2px 10px 0px rgba(173,166,173,1);
         border-radius: 5px;
         background: $main-text_color;
 
+        .courses-title {
+            width: 75%;
+        }
+
+        .course-info_block {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        .course-add_info {
+            display: flex;
+
+            .course-info_item {
+                position: relative;
+                margin: 0 15px;
+
+                i {
+                    top: -1px;
+                    right: 63px;
+                        &::before {
+                            color: #6e7984;
+                        }
+                }
+
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+
         h3 {
-            font-size: 28px;
+            font-size: 26px;
             text-transform: uppercase;
             font-weight: bold;
             margin: 0;
         }
+    }
+
+    .courses-settings {
+        width: 25%;
+        display: flex;
+        align-items: center;
+
+        .courses-settings_item {
+            position: relative;
+
+            i {
+                top: -1px;
+                right: 93px;
+            }
+
+            a {
+                margin: 0 15px;
+                padding: 10px 35px 10px 45px;
+            }
+        }
+    }
+
+    .load-control {
+        justify-content: center;
+        margin: 15px 0;
+        padding: 15px;
+
+        a {
+            text-decoration: none;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// New course section
+
+// About page 
+.about-page {
+    padding: 50px 60px 40px;
+
+    h2 {
+        font-size: 32px;
+        text-align: center;
+        margin-bottom: 30px;
     }
 }
 
