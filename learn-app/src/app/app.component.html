@@ -140,41 +140,42 @@
     <h3>New course</h3>
 
     <form action="">
-      <div class="title-area">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <div class="form-item">
+        <label for="fname">Title:</label>
+        <input type="text" id="fname" name="firstname" placeholder="Some title...">
       </div>
 
-      <div class="title-area">
-        <label for="fname">First Name</label>
-        <textarea type="text" id="fname" name="firstname" placeholder="Your name.."></textarea>
-          <!-- after *required -->
+      <div class="form-item">
+        <label for="fname">Description:</label>
+        <textarea type="text" id="fname" name="firstname" placeholder="Description..."></textarea>
       </div>
 
-      <div class="title-area">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <div class="form-item short-item">
+        <label for="fname">Duration:</label>
+        <input type="text" id="fname" name="firstname" placeholder="Some duration...">
       </div>
 
-      <div class="title-area">
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+      <div class="form-item short-item">
+        <label for="fname">Date:</label>
+        <input type="text" id="fname" name="firstname" placeholder="Some date...">
       </div>
 
-      <div class="">
-        <label for="cars">Choose a car:</label>
+      <div class="form-item">
+        <label for="cars">Authors:</label>
 
-        <select id="cars" multiple>
-          <option value="volvo">Volvo</option>
-          <option value="saab">Saab</option>
-          <option value="opel">Opel</option>
-          <option value="audi">Audi</option>
+        <select id="cars">
+          <option value="volvo">Author1</option>
+          <option value="saab">Author2</option>
+          <option value="opel">Author3</option>
+          <option value="audi">Author4</option>
         </select>
       </div>
 
       <div class="action-btns_area">
-        <a href="" class="load-more_btn">Cancel</a>
-        <a href="" class="load-more_btn">Save</a>
+        <div>
+          <a href="" class="action_btn">Cancel</a>
+          <a href="" class="action_btn save-action">Save</a>
+        </div>
       </div>
       
     </form>
