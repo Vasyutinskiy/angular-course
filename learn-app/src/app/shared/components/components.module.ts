@@ -5,11 +5,11 @@ import { CommonModule } from '@angular/common';
 
 
 @NgModule({
-  declarations: [
-    TitleComponent
-  ],
   imports: [
     CommonModule
+  ],
+  declarations: [
+    TitleComponent
   ],
   exports: [
     TitleComponent

@@ -9,13 +9,13 @@ const routes: Route[] = [
     },
     {
         path: 'courses',
-        loadChildren: () => import('../courses/courses.routing-module').then(m => m.CoursesRoutingModule)
+        loadChildren: () => import('../courses/courses.module').then(m => m.CoursesModule)
     },
     {
         path: 'about',
-        loadChildren: () => import('../about/about.routing-module').then(m => m.AboutRoutingModule)
+        loadChildren: () => import('../about/about.module').then(m => m.AboutModule)
     }
-]
+];
 
 @NgModule({
   declarations: [
@@ -23,8 +23,6 @@ const routes: Route[] = [
   imports: [
       RouterModule.forRoot(routes)
   ],
-  providers: [],
-  bootstrap: [],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

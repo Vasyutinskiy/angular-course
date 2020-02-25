@@ -12,7 +12,7 @@ const routes: Route[] = [
         path: 'add',
         component: CourseComponent
     }
-]
+];
 
 @NgModule({
   declarations: [
@@ -20,8 +20,6 @@ const routes: Route[] = [
   imports: [
       RouterModule.forChild(routes)
   ],
-  providers: [],
-  bootstrap: [],
   exports: [RouterModule]
 })
-export class CoursesRoutingModule {};
+export class CoursesRoutingModule {}

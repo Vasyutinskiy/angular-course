@@ -1,7 +1,6 @@
 import { ComponentsModule } from './components/components.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TestComponent } from './test/test.component';
 
 const imports = [
   CommonModule,
@@ -9,11 +8,8 @@ const imports = [
 ];
 
 @NgModule({
-  declarations: [TestComponent],
+  declarations: [],
   imports,
-  exports: [
-    ComponentsModule,
-    TestComponent
-  ]
+  exports: imports,
 })
 export class SharedModule { }
