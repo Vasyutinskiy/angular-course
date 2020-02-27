@@ -1,0 +1,28 @@
+@import '../../../../styles/variables.scss';
+
+header,
+footer {
+    background: $main-bg_color;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: $main-text_color;
+}
+
+main {
+    background: #ccdaea;
+    overflow: auto;
+    min-height: 645px;
+}
+
+footer {
+    justify-content: flex-end;
+}
+
+.copyright-section {
+    p {
+        font-size: 14px;
+        color: #6e7984;
+    }
+}

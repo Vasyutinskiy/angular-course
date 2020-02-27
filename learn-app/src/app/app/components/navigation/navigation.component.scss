@@ -1,0 +1,21 @@
+@import '../../../../styles/variables.scss';
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    a {
+        color: $main-text_color;
+        text-decoration: none;
+        margin: 0 5px;
+        font-size: 14px;
+        &:hover {
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+
+    .is-active {
+        text-decoration: underline;
+    }
+}
