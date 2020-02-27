@@ -12,6 +12,6 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     CoursesRoutingModule,
     SharedModule
-  ]
+  ],
 })
 export class CoursesModule { }

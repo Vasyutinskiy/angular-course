@@ -1,4 +1,4 @@
-<section class="new-course">
+<!-- <section class="new-course">
     <div class="new-course_item">
       <h3>New course</h3>
   
@@ -43,4 +43,37 @@
         
       </form>
     </div>
-  </section>
+  </section> -->
+
+
+  <div class="courses-item">
+    <div class="courses-title">
+      <div class="course-info">
+        <div class="course-info_block">
+          <h3>{{course.title}}</h3>
+          <div class="course-add_info">
+            <div class="course-info_item">
+              <i class="fa fa-clock"></i>
+              <span>2h 32min</span>
+            </div>
+            <div class="course-info_item">
+              <i class="fa fa-calendar-alt"></i>
+              <span>4h 12min</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>{{course.content}}
+        </p>
+    </div>
+    <div class="courses-settings">
+      <div class="courses-settings_item">
+        <i class="fa fa-pen"></i>
+        <a href="" class="add-item_btn settings-btn">Edit</a>
+      </div>
+      <div class="courses-settings_item">
+        <i class="fa fa-trash"></i>
+        <a href="" class="add-item_btn settings-btn">Delete</a>
+      </div>
+    </div>
+  </div>
