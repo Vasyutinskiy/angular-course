@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, OnDestroy} from '@angular/core';
 import { CoursesService } from './services/courses.service';
 import {filter, map, switchMap, tap} from 'rxjs/operators';
 import { Course } from 'src/app/core/models/course.model';
-import {fromEvent, Subject} from 'rxjs';
+import {fromEvent, Subject, Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -10,15 +10,19 @@ import {fromEvent, Subject} from 'rxjs';
   styleUrls: ['./courses.component.scss'],
   providers: [CoursesService]
 })
-export class CoursesComponent implements OnInit {
+export class CoursesComponent implements OnInit, OnDestroy {
   course: Course[];
+
+  sourseSubscription: Subscription = new Subscription();
 
   constructor(private CoursesService: CoursesService) {}
 
   ngOnInit(): void {
-    this.CoursesService.getCourse().pipe(
+    const subscription = this.CoursesService.getCourse().pipe(
       tap(data => (this.course = data))
     ).subscribe();
+
+    this.sourseSubscription.add(subscription);
 
     // Subject - producer. When next works on Subject - all subscribers got new DATA
     const subject = new Subject<number>();
@@ -43,6 +47,10 @@ export class CoursesComponent implements OnInit {
     document.body.addEventListener('click', () => {
       console.log('Native Click!');
     });
+  }
+
+  ngOnDestroy(): void {
+    this.sourseSubscription.unsubscribe();
   }
 
   handleDelete(id: number) {
