@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Course } from 'src/app/core/models/course.model';
 
 @Component({
@@ -7,13 +7,18 @@ import { Course } from 'src/app/core/models/course.model';
   styleUrls: ['./course.component.scss']
 })
 export class CourseComponent implements OnInit {
-
-  @Input() course: Course;
+  // any added for example
+  @Input() item: any;
+  // ADDED EventEmitter - notifier for parent that event happen
+  @Output() deleted: EventEmitter<number> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.course);
+  }
+
+  handleDelete() {
+    this.deleted.emit(this.item.id);
   }
 
 }

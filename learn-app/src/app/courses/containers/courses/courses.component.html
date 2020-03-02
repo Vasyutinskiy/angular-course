@@ -5,16 +5,19 @@
     <input type="text" id="coursesearch" name="coursesearch" placeholder="Text for search">
   </form>
 </section>
-    <!-- <app-title [title]="'courseslist-section'"></app-title> -->
-    <section class="courseslist-section">
-      <div class="action-control">
-        <i class="fa fa-plus"></i>
-        <a [routerLink]="['./add']" class="add-item_btn" href="">Add item</a>
-      </div>
+<!-- <app-title [title]="'courseslist-section'"></app-title> -->
+<section class="courseslist-section">
+  <div class="action-control">
+    <i class="fa fa-plus"></i>
+    <a [routerLink]="['./add']" class="add-item_btn" href="">Add item</a>
+  </div>
 
-      <app-course *ngFor="let course of course"  [course]="course"></app-course>
+  <app-course
+    *ngFor="let course of course"
+    [item]="course"
+    (deleted)="handleDelete($event)"></app-course>
 
-      <div class="courses-item load-control">
-        <a href="" class="load-more_btn">Load more</a>
-      </div>
-    </section>
+  <div class="courses-item load-control">
+    <a href="" class="load-more_btn">Load more</a>
+  </div>
+</section>

@@ -15,5 +15,10 @@ export class ApiService {
 
   getCourse(): Observable<Course[]> {
     return this.http.get<Course[]>(`${BASE_URL}/courses`);
-}
+  }
+
+  deleteCourse(id: number) {
+    return this.http.delete<Course[]>(`${BASE_URL}/courses/${id}`);
+  }
+
 }

@@ -15,4 +15,8 @@ export class CoursesService {
         return this.ApiService.getCourse();
     }
 
+    deleteCourse(id: number): Observable<{}> {
+      return this.ApiService.deleteCourse(id);
+    }
+
 }
