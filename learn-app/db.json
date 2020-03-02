@@ -1,0 +1,20 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Angular",
+      "content": [
+        "This course is about Angular",
+        "Course cover base knowladge of Angular"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Vue",
+      "content": [
+        "This course is about Vue",
+        "Course cover base knowladge of Vue"
+      ]
+    }
+  ]
+}

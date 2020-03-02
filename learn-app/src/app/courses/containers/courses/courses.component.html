@@ -5,116 +5,19 @@
     <input type="text" id="coursesearch" name="coursesearch" placeholder="Text for search">
   </form>
 </section>
-    <app-title [title]="'courseslist-section'"></app-title>
-    <section class="courseslist-section">
-      <div class="action-control">
-        <i class="fa fa-plus"></i>
-        <a [routerLink]="['./add']" class="add-item_btn" href="">Add item</a>
-      </div>
+<!-- <app-title [title]="'courseslist-section'"></app-title> -->
+<section class="courseslist-section">
+  <div class="action-control">
+    <i class="fa fa-plus"></i>
+    <a [routerLink]="['./add']" class="add-item_btn" href="">Add item</a>
+  </div>
 
-      <div class="courses-item">
-        <div class="courses-title">
-          <div class="course-info">
-            <div class="course-info_block">
-              <h3>Lorem ipsum dolor sit</h3>
-              <div class="course-add_info">
-                <div class="course-info_item">
-                  <i class="fa fa-clock"></i>
-                  <span>2h 32min</span>
-                </div>
-                <div class="course-info_item">
-                  <i class="fa fa-calendar-alt"></i>
-                  <span>4h 12min</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Suscipit, sunt quidem. Harum tenetur atque, veniam hic praesentium
-            cum ad asperiores veritatis reprehenderit magni omnis repellat odit eius
-            </p>
-        </div>
-        <div class="courses-settings">
-          <div class="courses-settings_item">
-            <i class="fa fa-pen"></i>
-            <a href="" class="add-item_btn settings-btn">Edit</a>
-          </div>
-          <div class="courses-settings_item">
-            <i class="fa fa-trash"></i>
-            <a href="" class="add-item_btn settings-btn">Delete</a>
-          </div>
-        </div>
-      </div>
+  <app-course
+    *ngFor="let course of course"
+    [item]="course"
+    (deleted)="handleDelete($event)"></app-course>
 
-      <div class="courses-item">
-        <div class="courses-title">
-          <div class="course-info">
-            <div class="course-info_block">
-              <h3>Lorem ipsum dolor sit</h3>
-              <div class="course-add_info">
-                <div class="course-info_item">
-                  <i class="fa fa-clock"></i>
-                  <span>2h 32min</span>
-                </div>
-                <div class="course-info_item">
-                  <i class="fa fa-calendar-alt"></i>
-                  <span>4h 12min</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Suscipit, sunt quidem. Harum tenetur atque, veniam hic praesentium
-            cum ad asperiores veritatis reprehenderit magni omnis repellat odit eius
-            </p>
-        </div>
-        <div class="courses-settings">
-          <div class="courses-settings_item">
-            <i class="fa fa-pen"></i>
-            <a href="" class="add-item_btn settings-btn">Edit</a>
-          </div>
-          <div class="courses-settings_item">
-            <i class="fa fa-trash"></i>
-            <a href="" class="add-item_btn settings-btn">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="courses-item">
-        <div class="courses-title">
-          <div class="course-info">
-            <div class="course-info_block">
-              <h3>Lorem ipsum dolor sit</h3>
-              <div class="course-add_info">
-                <div class="course-info_item">
-                  <i class="fa fa-clock"></i>
-                  <span>2h 32min</span>
-                </div>
-                <div class="course-info_item">
-                  <i class="fa fa-calendar-alt"></i>
-                  <span>4h 12min</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Suscipit, sunt quidem. Harum tenetur atque, veniam hic praesentium
-            cum ad asperiores veritatis reprehenderit magni omnis repellat odit eius
-            </p>
-        </div>
-        <div class="courses-settings">
-          <div class="courses-settings_item">
-            <i class="fa fa-pen"></i>
-            <a href="" class="add-item_btn settings-btn">Edit</a>
-          </div>
-          <div class="courses-settings_item">
-            <i class="fa fa-trash"></i>
-            <a href="" class="add-item_btn settings-btn">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="courses-item load-control">
-        <a href="" class="load-more_btn">Load more</a>
-      </div>
-    </section>
+  <div class="courses-item load-control">
+    <a href="" class="load-more_btn">Load more</a>
+  </div>
+</section>
