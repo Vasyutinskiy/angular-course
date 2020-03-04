@@ -6,15 +6,48 @@
       "content": [
         "This course is about Angular",
         "Course cover base knowladge of Angular"
-      ]
+      ],
+      "duration": 230,
+      "courseTime": 470,
+      "creationDate": 23
+    },
+    {
+      "id": 2,
+      "title": "Vue1",
+      "description": "This is pretty hard course",
+      "duration": 180,
+      "courseTime": 340,
+      "creationDate": 4
     },
     {
       "id": 3,
+      "title": "Vue2222",
+      "content": [
+        "This course is about Vue2222",
+        "Course cover base knowladge of Vue2222"
+      ],
+      "duration": 310,
+      "courseTime": 620,
+      "creationDate": 12
+    },
+    {
+      "id": 4,
+      "title": "Angular@@@@2222",
+      "description": "This is pretty interesting course",
+      "duration": 420,
+      "courseTime": 480,
+      "creationDate": 8
+    },
+    {
+      "id": 5,
       "title": "Vue",
       "content": [
         "This course is about Vue",
         "Course cover base knowladge of Vue"
-      ]
+      ],
+      "duration": 110,
+      "courseTime": 340,
+      "creationDate": 87
     }
   ]
 }

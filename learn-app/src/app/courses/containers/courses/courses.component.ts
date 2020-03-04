@@ -19,7 +19,8 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const subscription = this.CoursesService.getCourse().pipe(
-      tap(data => (this.course = data))
+      tap(data => (this.course = data)),
+      tap(data => console.log(data[0].content.join()))
     ).subscribe();
 
     this.sourseSubscription.add(subscription);
@@ -38,15 +39,15 @@ export class CoursesComponent implements OnInit, OnDestroy {
     //   console.log('Click!!!RxJs', event);
     // });
     // With pipe usage(map, filter etc returns Observable)
-    fromEvent(document.body, 'click').pipe(
-      map((x: MouseEvent) => x.clientX),
-      filter(x => x % 5 === 0),
-      tap(x => subject.next(x))
-    ).subscribe();
+    // fromEvent(document.body, 'click').pipe(
+    //   map((x: MouseEvent) => x.clientX),
+    //   filter(x => x % 5 === 0),
+    //   tap(x => subject.next(x))
+    // ).subscribe();
     // native example of click listener
-    document.body.addEventListener('click', () => {
-      console.log('Native Click!');
-    });
+    // document.body.addEventListener('click', () => {
+    //   console.log('Native Click!');
+    // });
   }
 
   ngOnDestroy(): void {
