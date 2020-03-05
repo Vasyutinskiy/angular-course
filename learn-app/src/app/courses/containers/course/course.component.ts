@@ -8,7 +8,7 @@ import { Course } from 'src/app/core/models/course.model';
 })
 export class CourseComponent implements OnInit {
   // any added for example
-  @Input() item: any;
+  @Input() item: Course;
   // ADDED EventEmitter - notifier for parent that event happen
   @Output() deleted: EventEmitter<number> = new EventEmitter();
 

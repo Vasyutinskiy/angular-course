@@ -41,6 +41,10 @@ i {
     border-radius: 5px;
     background: $main-text_color;
 
+    &.courses__item--highlighted {
+      border: 3px solid #30B6DD;
+    }
+
     .courses-title {
         width: 75%;
     }

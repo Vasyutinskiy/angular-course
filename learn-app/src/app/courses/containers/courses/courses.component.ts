@@ -11,7 +11,7 @@ import {fromEvent, Subject, Subscription} from 'rxjs';
   providers: [CoursesService]
 })
 export class CoursesComponent implements OnInit, OnDestroy {
-  course: Course[];
+  courses: Course[];
 
   sourseSubscription: Subscription = new Subscription();
 
@@ -19,7 +19,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     const subscription = this.CoursesService.getCourse().pipe(
-      tap(data => (this.course = data)),
+      tap(data => (this.courses = data)),
       tap(data => console.log(data[0].content.join()))
     ).subscribe();
 
@@ -58,7 +58,7 @@ export class CoursesComponent implements OnInit, OnDestroy {
     this.CoursesService.deleteCourse(id)
       .pipe(
         switchMap(() => this.CoursesService.getCourse()),
-        tap(data => (this.course = data))
+        tap(data => (this.courses = data))
         // tap(() => console.log(data))
       )
       .subscribe();
