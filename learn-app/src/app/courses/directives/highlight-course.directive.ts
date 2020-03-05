@@ -14,6 +14,10 @@ export class HighlightCourseDirective implements OnInit {
   @HostBinding('class') classPropRef: string;
   // @HostBinding('style') newItemStyles: string;
 
+
+  // HOW TO IMPLEMENT SAME WITH DIRECTIVES ngStyle and ngClass????????~!!!!! 
+
+
   @Input() onTrigeredClass: string;
   @Input() itemCourse: Course;
   // In case you should changed several cases - use set
