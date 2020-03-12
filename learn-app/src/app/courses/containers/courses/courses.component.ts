@@ -11,26 +11,40 @@ import {fromEvent, Subject, Subscription} from 'rxjs';
   providers: [CoursesService]
 })
 export class CoursesComponent implements OnInit, OnDestroy {
-  course: Course[];
+  courses: Course[];
 
   sourseSubscription: Subscription = new Subscription();
 
-  constructor(private CoursesService: CoursesService) {}
+  constructor(private coursesService: CoursesService) {}
 
   ngOnInit(): void {
-    const subscription = this.CoursesService.getCourse().pipe(
-      tap(data => (this.course = data))
+    this.coursesService.loadCourses().subscribe();
+    this.coursesService.courses.pipe(
+      tap(courses => this.courses = courses)
     ).subscribe();
 
-    this.sourseSubscription.add(subscription);
+
+    // !How to use this subscription for several items?????
+    // const subscription = this.CoursesService.getCourse().pipe(
+    //   tap(data => (this.courses = data)),
+    //   // tap(data => console.log(data[0].content.join()))
+    // ).subscribe();
+
+    // !How to use this subscription for several items?????
+    // this.sourseSubscription.add(subscription);
+
+
+
+
+
 
     // Subject - producer. When next works on Subject - all subscribers got new DATA
-    const subject = new Subject<number>();
+    // const subject = new Subject<number>();
     // subscriber
-    const subject$ = subject.asObservable();
+    // const subject$ = subject.asObservable();
 
-    const sub1 = subject$.subscribe((data) => console.log(data));
-    const sub2 = subject$.subscribe((data) => console.log(data));
+    // const sub1 = subject$.subscribe((data) => console.log(data));
+    // const sub2 = subject$.subscribe((data) => console.log(data));
 
     // RXjs click listener .subscribe
     // FromEvent - producer that generate pipe of data
@@ -38,28 +52,31 @@ export class CoursesComponent implements OnInit, OnDestroy {
     //   console.log('Click!!!RxJs', event);
     // });
     // With pipe usage(map, filter etc returns Observable)
-    fromEvent(document.body, 'click').pipe(
-      map((x: MouseEvent) => x.clientX),
-      filter(x => x % 5 === 0),
-      tap(x => subject.next(x))
-    ).subscribe();
+    // fromEvent(document.body, 'click').pipe(
+    //   map((x: MouseEvent) => x.clientX),
+    //   filter(x => x % 5 === 0),
+    //   tap(x => subject.next(x))
+    // ).subscribe();
     // native example of click listener
-    document.body.addEventListener('click', () => {
-      console.log('Native Click!');
-    });
+    // document.body.addEventListener('click', () => {
+    //   console.log('Native Click!');
+    // });
   }
 
   ngOnDestroy(): void {
     this.sourseSubscription.unsubscribe();
   }
 
+  // handleDelete(id: number) {
+  //   this.coursesService.deleteCourse(id)
+  //     .pipe(
+  //       switchMap(() => this.coursesService.getCourse()),
+  //       tap(data => (this.courses = data))
+  //     )
+  //     .subscribe();
+  // }
+
   handleDelete(id: number) {
-    this.CoursesService.deleteCourse(id)
-      .pipe(
-        switchMap(() => this.CoursesService.getCourse()),
-        tap(data => (this.course = data))
-        // tap(() => console.log(data))
-      )
-      .subscribe();
+    this.coursesService.deleteCourseById(id).subscribe();
   }
 }

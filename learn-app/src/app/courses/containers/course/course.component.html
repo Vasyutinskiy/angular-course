@@ -1,4 +1,4 @@
-<div class="courses-item">
+<div appHighlightCourse [itemCourse]="item" [onTrigeredClass]="'courses__item--highlighted'" class="courses-item">
   <div class="courses-title">
     <div class="course-info">
       <div class="course-info_block">
@@ -6,17 +6,22 @@
         <div class="course-add_info">
           <div class="course-info_item">
             <i class="fa fa-clock"></i>
-            <span>2h 32min</span>
+            <span>{{ item.duration | appConvert }}</span>
           </div>
           <div class="course-info_item">
             <i class="fa fa-calendar-alt"></i>
-            <span>4h 12min</span>
+            <span>{{ item.courseTime | appConvert }}</span>
           </div>
         </div>
       </div>
     </div>
-    <p>{{item.content}}
-      </p>
+    <!-- NOT best method -->
+    <!-- <p>{{ item.content ? item.content.join() : '' }}</p> -->
+    <!-- BETTER method -->
+    <p *ngIf="item.content; else: upperTitle">{{ item.content | appJoin }}</p>
+    <ng-template #upperTitle>
+      <p>{{ item.description | appUpper }}</p>
+    </ng-template>
   </div>
   <div class="courses-settings">
     <div class="courses-settings_item">

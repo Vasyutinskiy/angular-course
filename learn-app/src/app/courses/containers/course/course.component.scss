@@ -41,6 +41,10 @@ i {
     border-radius: 5px;
     background: $main-text_color;
 
+    &.courses__item--highlighted {
+      border: 3px solid #30B6DD;
+    }
+
     .courses-title {
         width: 75%;
     }
@@ -59,8 +63,8 @@ i {
             margin: 0 15px;
 
             i {
-                top: -1px;
-                right: 63px;
+                top: 1px;
+                right: 72px;
                     &::before {
                         color: #6e7984;
                     }
